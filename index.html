@@ -1,6 +1,94 @@
 <html>
 <head>
-<title>Creative</title>
+<title>Website Color Tester</title>
+<link href="./main.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
+<header id="headerColor">
+<center>
+<h1>Test color combinations for your website</h1>
+<h2>Please Select a color for the Header</h2>
+<select name="Header Colors">
+  <option value="Header Colors">Header Color</option>
+  <option value="red" onclick="colorH('red')">Red</option>
+  <option value="blue" onclick="colorH('blue')">Blue</option>
+  <option value="lightblue" onclick="colorH('lightblue')">Light Blue</option>
+  <option value="brown" onclick="colorH('brown')">Brown</option>
+  <option value="brown" onclick="colorH('#e24e42')">Papaya</option>
+  <option value="brown" onclick="colorH('#ffce00')">Sunflowers</option>
+</select>
+</center>
+<script>
+function colorH(col){
+document.getElementById("headerColor").style.backgroundColor=col;
+}
+</script> 
+</header>
+
+<body id="bodyColor">
+<center>
+<p id="pColor2">The purpose of this webpage is to help creators find the best possible color combination for their website. We have provided header, body, footer and font Color options so that the user can see how different colors work with one another on the page.</p>
+<h3>Please Select a color for the Body</h3>
+<select name="Body Colors">
+  <option value="">Body Color</option>
+  <option value="red" onclick="colorB('red')">Red</option>
+  <option value="blue" onclick="colorB('blue')">Blue</option>
+  <option value="lightblue" onclick="colorB('lightblue')">Light Blue</option>
+  <option value="brown" onclick="colorB('brown')">Brown</option>
+  <option value="brown" onclick="colorB('#e9b000')">Mustard</option>
+  <option value="brown" onclick="colorB('#0375B4')">Starry Night</option>
+</select> 
+<script>
+function colorB(col){
+document.getElementById("bodyColor").style.backgroundColor=col;
+}
+</script> 
+<h1 id="color1">Choose Your Colors</h1>
+<img src="https://www.wordpresswebsitedesigns.co.za/wp-content/uploads/2015/07/good-vs-bad-website-deisng.png" altText="None">
+<h2>Please Select a color for the Paragraph</h2>
+<select name="Paragraph Colors">
+  <option value="">Paragraph Colors</option>
+  <option value="red" onclick="colorP('red')">Red</option>
+  <option value="blue" onclick="colorP('blue')">Blue</option>
+  <option value="lightblue" onclick="colorP('lightblue')">Light Blue</option>
+  <option value="brown" onclick="colorP('brown')">Brown</option>
+  <option value="brown" onclick="colorP('#eb6e80')">Blush</option>	
+  <option value="brown" onclick="colorP('#007849')">Irises</option>
+</select>
+<script>
+function colorP(col){
+document.getElementById("pColor").style.color=col;
+document.getElementById("pColor2").style.color=col;
+}
+</script>
+
+<p id="pColor">Paragraph Color</p>
+
+
+</center>
+</body>
+
+<footer id="footerColor">
+<center>
+<h3>Please Select a color for the Footer</h3>
+<select name="Footer Colors">
+  <option value="">Footer Color</option>
+  <option value="red" onclick="colorF('red')">Red</option>
+  <option value="blue" onclick="colorF('blue')">Blue</option>
+  <option value="lightblue" onclick="colorF('lightblue')">Light Blue</option>
+  <option value="brown" onclick="colorF('brown')">Brown</option>
+  <option value="brown" onclick="colorF('#008f95')">Aqua</option>
+  <option value="brown" onclick="colorF('#262228')">Evening</option>
+</select> 
+</center>
+<script>
+function colorF(col){
+document.getElementById("footerColor").style.backgroundColor=col;
+}
+</script>
+<center>
+<br>
+ <p style="margin:0">&#x24B8; By Taylor & Moises</p>
+</center>
+</footer>
 
 </html>
