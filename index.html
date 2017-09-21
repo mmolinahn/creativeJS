@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Website Color Tester</title>
@@ -7,60 +8,102 @@
 <center>
 <h1>Test color combinations for your website</h1>
 <h2>Please Select a color for the Header</h2>
-<select name="Header Colors">
+<select id="colorH" onchange="colorH()">
   <option value="Header Colors">Header Color</option>
   <option value="red" onclick="colorH('red')">Red</option>
   <option value="blue" onclick="colorH('blue')">Blue</option>
   <option value="lightblue" onclick="colorH('lightblue')">Light Blue</option>
   <option value="brown" onclick="colorH('brown')">Brown</option>
-  <option value="brown" onclick="colorH('#e24e42')">Papaya</option>
-  <option value="brown" onclick="colorH('#ffce00')">Sunflowers</option>
+  <option value="#e24e42" onclick="colorH('#e24e42')">Papaya</option>
+  <option value="#ffce00" onclick="colorH('#ffce00')">Sunflowers</option>
 </select>
+<br>
+<br>
 </center>
 <script>
 function colorH(col){
-document.getElementById("headerColor").style.backgroundColor=col;
+var x = document.getElementById("colorH").value;
+document.getElementById("headerColor").style.backgroundColor = x; 
 }
-</script> 
+</script>
 </header>
 
-<body id="bodyColor">
+<body>
 <center>
+<article>
 <p id="pColor2">The purpose of this webpage is to help creators find the best possible color combination for their website. We have provided header, body, footer and font Color options so that the user can see how different colors work with one another on the page.</p>
-<h3>Please Select a color for the Body</h3>
-<select name="Body Colors">
-  <option value="">Body Color</option>
-  <option value="red" onclick="colorB('red')">Red</option>
-  <option value="blue" onclick="colorB('blue')">Blue</option>
-  <option value="lightblue" onclick="colorB('lightblue')">Light Blue</option>
-  <option value="brown" onclick="colorB('brown')">Brown</option>
-  <option value="brown" onclick="colorB('#e9b000')">Mustard</option>
-  <option value="brown" onclick="colorB('#0375B4')">Starry Night</option>
-</select> 
-<script>
-function colorB(col){
-document.getElementById("bodyColor").style.backgroundColor=col;
-}
-</script> 
-<h1 id="color1">Choose Your Colors</h1>
-<img src="https://www.wordpresswebsitedesigns.co.za/wp-content/uploads/2015/07/good-vs-bad-website-deisng.png" altText="None">
-<h2>Please Select a color for the Paragraph</h2>
-<select name="Paragraph Colors">
-  <option value="">Paragraph Colors</option>
-  <option value="red" onclick="colorP('red')">Red</option>
-  <option value="blue" onclick="colorP('blue')">Blue</option>
-  <option value="lightblue" onclick="colorP('lightblue')">Light Blue</option>
-  <option value="brown" onclick="colorP('brown')">Brown</option>
-  <option value="brown" onclick="colorP('#eb6e80')">Blush</option>	
-  <option value="brown" onclick="colorP('#007849')">Irises</option>
+</article>
+
+<h3>Please Select a color for the Headings</h3>
+<select id="colorHead" onchange="colorHe()">
+  <option value="Header Colors">Header Color</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="lightblue">Light Blue</option>
+  <option value="brown">Brown</option>
+  <option value="#e24e42">Papaya</option>
+  <option value="#ffce00">Sunflowers</option>
 </select>
 <script>
-function colorP(col){
-document.getElementById("pColor").style.color=col;
-document.getElementById("pColor2").style.color=col;
+function colorHe(){
+var x = document.getElementById("colorHead").value;
+var h1Elements = document.getElementsByTagName("h1");
+
+for(var i = 0; i < h1Elements.length; i++) {
+   h1Elements[i].style.color = x;
+}
+
+var h2Elements = document.getElementsByTagName("h2");
+
+for(var i = 0; i < h2Elements.length; i++) {
+   h2Elements[i].style.color = x;
+}
+var h3Elements = document.getElementsByTagName("h3");
+
+for(var i = 0; i < h3Elements.length; i++) {
+   h3Elements[i].style.color = x;
+}
+
+
 }
 </script>
 
+
+<h3>Please Select a color for the Body</h3>
+<select id="colorBo" onchange="colorB()">
+  <option value="">Body Color</option>
+  <option value="red" >Red</option>
+  <option value="blue">Blue</option>
+  <option value="lightblue">Light Blue</option>
+  <option value="brown">Brown </option>
+  <option value="#e9b000" >Mustard</option>
+  <option value="#0375B4">Starry Night</option>
+</select>
+<script>
+function colorB(){
+var x = document.getElementById("colorBo").value;
+document.body.style.background = x;
+}
+</script>
+<h1 id="color1">Choose Your Colors</h1>
+<img src="https://www.wordpresswebsitedesigns.co.za/wp-content/uploads/2015/07/good-vs-bad-website-deisng.png" altText="None">
+<h2>Please Select a color for the Paragraph</h2>
+<script>
+function colorP(){
+var x = document.getElementById("ColorPa").value;
+document.getElementById("pColor2").style.color = x;
+document.getElementById("pColor").style.color = x;
+}
+</script>
+<select id="ColorPa" onchange="colorP()">
+  <option value="">Paragraph Colors</option>
+  <option value="red" >Red</option>
+  <option value="blue">Blue</option>
+  <option value="lightblue">Light Blue</option>
+  <option value="brown">Brown</option>
+  <option value="brown">Blush</option>
+  <option value="brown">Irises</option>
+</select>
 <p id="pColor">Paragraph Color</p>
 
 
@@ -70,19 +113,20 @@ document.getElementById("pColor2").style.color=col;
 <footer id="footerColor">
 <center>
 <h3>Please Select a color for the Footer</h3>
-<select name="Footer Colors">
+<select id="colorFo" onchange="colorF()">
   <option value="">Footer Color</option>
-  <option value="red" onclick="colorF('red')">Red</option>
-  <option value="blue" onclick="colorF('blue')">Blue</option>
-  <option value="lightblue" onclick="colorF('lightblue')">Light Blue</option>
-  <option value="brown" onclick="colorF('brown')">Brown</option>
-  <option value="brown" onclick="colorF('#008f95')">Aqua</option>
-  <option value="brown" onclick="colorF('#262228')">Evening</option>
-</select> 
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="lightblue">Light Blue</option>
+  <option value="brown">Brown</option>
+  <option value="#008f95">Aqua</option>
+  <option value="#262228">Evening</option>
+</select>
 </center>
 <script>
-function colorF(col){
-document.getElementById("footerColor").style.backgroundColor=col;
+function colorF(){
+var x = document.getElementById("colorFo").value;
+document.getElementById("footerColor").style.background = x;
 }
 </script>
 <center>
